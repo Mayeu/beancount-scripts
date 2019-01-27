@@ -1,9 +1,13 @@
 [tool.poetry]
 name = "beancount-script"
-version = "1.0.0"
+version = "1.0.2"
 description = "Scripts I use for my accounting using beancount"
 authors = ["Mayeu <m@mayeu.me>"]
 license = "AGPL-3.0-or-later"
+
+packages = [
+    { include = "bin/*" },
+]
 
 [tool.poetry.dependencies]
 python = "^3.7"

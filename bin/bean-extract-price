@@ -1,0 +1,30 @@
+#!/usr/bin/env python3
+import re
+import sys
+
+from beancount import loader
+from beancount.core import amount
+from beancount.core import data
+from beancount.parser import printer
+
+CURRENCY_RE = r'[A-Z][A-Z0-9\'\.\_\-]{0,22}[A-Z0-9]'
+
+def extract_price(input_file):
+    entries, errors, options = loader.load_file(input_file, log_errors=sys.stderr)
+
+    for entry in entries:
+        if isinstance(entry, data.Transaction):
+            if entry.postings:
+                for posting in entry.postings:
+                    if posting.price:
+                        transaction_currency = posting.units.currency
+                        price_currency = posting.price.currency
+                        number = posting.price.number
+                        fileloc = data.new_metadata("ihavenocluewhatisthis.txt", 2)
+                        price = data.Price(fileloc, entry.date, transaction_currency,
+                            amount.Amount(number, price_currency or UNKNOWN_CURRENCY))
+                        printer.print_entry(price)
+
+if __name__ == "__main__":
+    filename = sys.argv[1]
+    extract_price(filename)

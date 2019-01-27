@@ -35,3 +35,8 @@ currency contains in your beancount files.
     2018-11-24 price EUR                    37.41488237173971828216032842 THB
     
     2018-11-30 price SEK                    0.09707746478873239436619718310 EUR
+
+## Licence
+
+GNU Affero General Public License version 3, Copyright (C) 2018  @Mayeu
+Matthieu Maury <m@mayeu.me>.

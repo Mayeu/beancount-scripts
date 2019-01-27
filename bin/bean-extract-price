@@ -1,4 +1,10 @@
 #!/usr/bin/env python3
+
+__author__ = "Mayeu Matthieu Maury"
+__email__ = "m@mayeu.me"
+__copyright__ = "Copyright 2018 (C), Mayeu Matthieu Maury <m@mayeu.me>"
+__license__ = "AGPLv3"
+
 import re
 import sys
 

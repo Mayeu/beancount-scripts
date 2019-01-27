@@ -6,6 +6,10 @@ A collection of quick'n'dirty scripts I use for my accounting with
 Since beancount is written in Python 3, all those script are only compatible
 with this version of Python.
 
+On macOS you can install all the scripts via my homebrew tap:
+
+    $ brew install mayeu/mayeu/beancount-scripts
+
 [b]: http://furius.ca/beancount/
 
 ## bean-extract-price
